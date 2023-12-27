@@ -33,6 +33,11 @@
       while(monsterHP > 0){ //monsterHP > 0 : 몬스터의 hp가 남아있으면 계속 공격을 한다.
         monsterHP -= attackDamage //hp가 감소한다.
         attackCount += 1 // 때린 횟수는 증가한다
+        //🗒️과제: 여기에 만약 hp가 0보다 작아질 경우, hp에 0을 대입한다.
+        //hp가 0보다 작아져서 음수가 되어도 강제로 0을 대입한다.
+        if (monsterHP < 0){
+          monsterHP = 0;
+        }
 
         const p = document.createElement("p")
         p.textContent = `몬스터를 ${attackCount}회 공격했습니다!`
@@ -42,8 +47,7 @@
         strong.textContent = `몬스터의 남은 HP는 ${monsterHP}입니다!`
         document.body.appendChild(strong)
 
-        //🗒️과제: 여기에 만약 hp가 0보다 작아질 경우, hp에 0을 대입한다.
-        //hp가 0보다 작아져서 음수가 되어도 강제로 0을 대입한다.
+        
       }
 
       // while문이 끝나면 여기로 넘어올테니, 게임이 끝났다는것을 표시
@@ -61,7 +65,7 @@
 
     // 100의 약수가 아닐 경우. ex)23을 주면 마지막에 -15가 된다.
     //과제는: hp가 강제로 0을 대입하는 코드를 추가해보자. 음수로 출력되는 상황은 나오지 않는다.
-    //힌트: 
+    
   </script>
 </body>
 </html>
